@@ -31,22 +31,6 @@
     <main>
       <section id="features">
         <div class="wrapper">
-          <form
-            id="form"
-            action="https://www.freecodecamp.com/email-submit"
-            method="POST"
-          >
-            <label for="email"
-              >Email
-              <input
-                id="email"
-                type="email"
-                name="email"
-                placeholder="Enter your email address"
-              />
-            </label>
-            <button id="submit" type="submit">Get Started</button>
-          </form>
           <div class="description">
             <h2>Premium Materials</h2>
             <p>
@@ -81,7 +65,21 @@
         </div>
       </section>
       <section id="pricing">
-        <div class="wrapper">Features</div>
+        <div class="wrapper">
+          <form
+            id="form"
+            action="https://www.freecodecamp.com/email-submit"
+            method="POST"
+          >
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="e-mail"
+            />
+            <button id="submit" type="submit">Subscribe</button>
+          </form>
+        </div>
       </section>
     </main>
     <script src="js/app.js"></script>
