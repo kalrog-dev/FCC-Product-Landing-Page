@@ -4,20 +4,17 @@ $color-light: lighten($color, 15%);
 $color-dark: darken($color, 15%);
 $font-color: white;
 
+// Dark theme
 $color1: #111a25;
 $color1-dark: darken($color1, 4%);
 $color2: #e3d3a3;
 $color3: #d24041;
-/*
-$color1: #e9e6e4;   original light, orange
-$color2: #271958;
-$color3: #f51a79;
 
-$color1: #f9ffff; light, blue
-$color2: #3e4535;
-$color3: #005f9a;
-*/
-
+// Light theme
+$color4: #f9ffff;
+$color4-dark: darken($color4, 4%);
+$color5: #3e4535;
+$color6: #005f9a;
 
 * {
   margin: 0;
@@ -52,7 +49,7 @@ header {
   margin-left: 30px;
   mix-blend-mode: difference;
 }
-#nav-bar span {
+#nav-bar .logo-text {
   color: $color3;
   font-size: 22px;
   display: flex;
@@ -61,7 +58,7 @@ header {
 }
 #nav-links {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   flex: 1;
   li {
@@ -74,6 +71,7 @@ header {
     color: $color2;
     font-size: 20px;
     border-radius: 10px;
+    transition: background-color 0.2s;
   }
   li a:last-child {
     margin-right: 40px;
@@ -84,8 +82,41 @@ header {
   width: 40px;
   margin: 2px;
   margin-right: 50px;
-  background-color: tomato;
+  background-color: $color3;
   display: none;
+}
+.button-wrap {
+  display: flex;
+  align-items: center;
+}
+#button-theme {
+  background-color: transparent;
+  height: 40px;
+  width: 110px;
+  padding: 5px;
+  margin-right: 30px;
+  border: none;
+  color: $color2;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+#button-theme:hover,
+.nav-link:hover {
+  background-color: rgba($color3, 1);
+}
+.icon-wrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.icon {
+  color: $color2;
+  height: 18px;
+  width: 18px;
+}
+.icon-wrap span {
+  font-size: 20px;
 }
 main {
   padding-top: 100px;
@@ -108,6 +139,7 @@ section {
   padding: 20px;
   background-color: $color1;
   &:nth-child(1) {
+    border-top: 1px solid rgba($color2, 0.2);
     border-bottom: 1px solid rgba($color2, 0.2);
   }
   &:nth-child(2) {
@@ -116,7 +148,7 @@ section {
 }
 form {
   padding: 30px;
-  width: 400px;
+  width: 620px;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -146,6 +178,7 @@ form {
     font-size: 15px;
     text-transform: uppercase;
     border: none;
+    cursor: pointer;
   }
 }
 .description {
@@ -155,8 +188,11 @@ form {
   border-left: 3px solid $color3;
 }
 @media (max-width: 767px) {
-  #nav-links li a {
-    display: none;
+  #nav-links {
+    justify-content: flex-end;
+    li a {
+      display: none;
+    }
   }
   .hamburger-wrapper {
     display: flex;
@@ -164,6 +200,9 @@ form {
   }
   .hamburger-line {
     display: initial;
+  }
+  .button-wrap {
+    display: none;
   }
   #video {
     width: 90%;
@@ -174,9 +213,86 @@ form {
     margin: 0 auto;
   }
 }
+@media (max-width: 1050px) {
+  #nav-links li {
+    display: none;
+  }
+}
 @media (max-width: 1300px) {
   .wrapper {
     width: 90vw;
     margin: 0 auto;
+  }
+}
+
+
+// Light theme
+.light-theme {
+  h2 {
+    color: $color6;
+  }
+  p {
+    color: $color5;
+  }
+  header {
+    background-color: $color4;
+  }
+  #nav-bar .logo-text {
+    color: $color6;
+  }
+  #nav-links li a {
+    color: $color5;
+    &:hover {
+      color: $color4;
+    }
+  }
+  .hamburger-line {
+    background-color: $color6;
+  }
+  #button-theme {
+    color: $color5;
+    &:hover {
+      color: $color4;
+      .icon {
+        color: $color4;
+      }
+    }
+  }
+  #button-theme:hover,
+  .nav-link:hover {
+    background-color: rgba($color6, 1);
+  }
+  .icon {
+    color: $color5;
+  }
+  main {
+    background-color: $color4;
+  }
+  section {
+    background-color: $color4;
+    &:nth-child(1) {
+      border-top: 1px solid rgba($color5, 0.2);
+      border-bottom: 1px solid rgba($color5, 0.2);
+    }
+    &:nth-child(2) {
+      border-bottom: 1px solid rgba($color5, 0.2);
+    }
+  }
+  form {
+    input {
+      color: $color5;
+      background-color: $color4;
+      border: 2px solid $color6;
+      &::placeholder {
+        color: $color5;
+      }
+    }
+    #submit {
+      background-color: $color6;
+      color: $color4;
+    }
+  }
+  .description {
+    border-left: 3px solid $color6;
   }
 }
