@@ -2,4 +2,4 @@
  
 The web page is available at the following URL:
 
-https://michal7272.github.io/FCC-Product-Landing-Page/
+https://kalrog-dev.github.io/FCC-Product-Landing-Page/
